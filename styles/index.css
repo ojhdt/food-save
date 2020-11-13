@@ -7,6 +7,7 @@
   --opacity: 1;
   --fade: 100%;
   --slide: 0;
+  --up: -1;
 }
 
 .opacity{
@@ -37,7 +38,7 @@
 }
 
 body{
-  background: rgb(20, 20, 20);
+  background: rgba(245, 245, 245, 1);
   font-family: Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
@@ -103,7 +104,6 @@ section{
   height: 80vh;
   justify-content: center;
   align-items: center;
-  background-color: wheat;
   flex-wrap: nowrap;
   margin: 2% 10%;
 }
@@ -129,8 +129,8 @@ section{
 
 .B{
   /*display: none;*/
-  /*position: fixed;
-  top: 50px;*/
+  position: fixed;
+  top: 50px;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -154,7 +154,13 @@ section{
   padding: 1vh;
 }
 
+#list{
+  transform: translateY(calc(var(--up)*-160vh));
+}
+
 .C{
+  position: fixed;
+  top: 50px;
   flex-direction: column;
 }
 
@@ -179,6 +185,10 @@ section{
 
 .C img{
   width: 50vh;
+}
+
+#bow{
+  transform: translateY(calc(70vh + var(--up)*-70vh));
 }
 
 .D{
