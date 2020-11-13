@@ -8,6 +8,7 @@ const l1= document.querySelector('#l1');
 const l2= document.querySelector('#l2');
 const l3= document.querySelector('#l3');
 const p1= document.querySelector('#food');
+const boxa= document.querySelector('.A');
 
 document.addEventListener('scroll', (e) => {
     let scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
@@ -35,8 +36,5 @@ document.addEventListener('scroll', (e) => {
     if(scrolled - 0.2 <0 ) opa = 0;
     if(scrolled - 0.2 <= 0.05 && scrolled - 0.2 >= 0) opa = (scrolled - 0.2) * 20;
     if(scrolled - 0.2 > 0.05) opa = 1;
-    l1.style.setProperty('--opacity', 1-opa)
-    l2.style.setProperty('--opacity', 1-opa)
-    l3.style.setProperty('--opacity', 1-opa)
-    p1.style.setProperty('--opacity', 1-opa)
+    boxa.style.setProperty('--opacity', 1-opa)
 })
