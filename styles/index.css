@@ -4,9 +4,36 @@
  */
 
 :root{
-  --percentage_img1: 0%;
-  --px_img1: 0px;
-  --percentage_text1: 0%;
+  --opacity: 1;
+  --fade: 100%;
+  --slide: 0;
+}
+
+.opacity{
+  opacity: var(--opacity);
+}
+
+.fading-w{
+  background-image: linear-gradient(75deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 33.3%, rgba(255, 255, 255, 1) 66.7%, rgba(255, 255, 255, 1) 100%);
+  background-size: 300% 100%;
+  background-position-x: var(--fade);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.fading-b{
+  background-image: linear-gradient(90deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 1) 33.3%, rgba(0, 0, 0, 0) 66.7%, rgba(0, 0, 0, 0) 100%);
+  background-size: 300% 100%;
+  background-position-x: var(--fade);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.slide{
+  transform: scale(calc(1.8 - (0.8 * var(--slide)))) translateX(calc(-100px + 100px*var(--slide)));
+  opacity: var(--slide);
 }
 
 body{
@@ -62,7 +89,7 @@ section{
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 1000vh;
+  height: 800vh;
 }
 
 .space{
@@ -83,7 +110,7 @@ section{
 
 .A{
   /*display: none;*/
-  /*position: fixed;*/
+  position: fixed;
   top: 50px;
   flex-direction: row;
   justify-content: flex-start;
@@ -93,7 +120,6 @@ section{
   width: 40%;
   min-width: 40vh;
   border-radius: 1em 1em 1em 1em;
-  transform: translateX(0px);
 }
 
 .A h2{
@@ -159,25 +185,28 @@ section{
   flex-direction: column;
   margin: 0;
   width: 100%;
-  height: 100vh;
 }
 
-.D h2{
+.bottom h2{
+  margin: 0;
+  padding: 30px 0;
   font-size: 3.5rem;
   text-align: center;
 }
 
-.D h3{
+.bottom h3{
+  margin: 0;
+  padding: 20px;
   font-size: 2.5rem;
   text-align: center;
 }
 
-.D img{
+.bottom img{
   width: 100%;
-  height: 60%;
+  height: auto;
 }
 
-.D h4{
+.bottom h4{
   font-size: 1rem;
   text-align: center;
   padding: 10px 20px;
