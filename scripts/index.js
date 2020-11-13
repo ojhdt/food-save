@@ -19,7 +19,9 @@ const boxb= document.querySelector('.B');
 const l7= document.querySelector('#l7');
 const l8= document.querySelector('#l8');
 const p2= document.querySelector('#bow');
-const list2= document.querySelector('.up');
+const listl= document.querySelector('#list-l');
+const listr= document.querySelector('#list-r');
+const boxc= document.querySelector('.C');
 
 document.addEventListener('scroll', (e) => {
     let scrolled = document.documentElement.scrollTop / (document.documentElement.scrollHeight - document.documentElement.clientHeight)
@@ -84,8 +86,19 @@ document.addEventListener('scroll', (e) => {
     if(scrolled - 0.55 > 0.05) l8p = 1;
     l8.style.setProperty('--fade', `${100 - l8p*100}%`)
 
-    if(scrolled - 0.6 <0 ) list2p = 0;
-    if(scrolled - 0.6 <= 0.1 && scrolled - 0.6 >= 0) list2p = (scrolled - 0.6) * 10;
-    if(scrolled - 0.6 > 0.1) list2p = 1;
-    p2.style.setProperty('--up', list2p)
+    if(scrolled - 0.6 <0 ) p2p = 0;
+    if(scrolled - 0.6 <= 0.1 && scrolled - 0.6 >= 0) p2p = (scrolled - 0.6) * 10;
+    if(scrolled - 0.6 > 0.1) p2p = 1;
+    p2.style.setProperty('--up', p2p)
+
+    if(scrolled - 0.65 <0 ) list2p = 0;
+    if(scrolled - 0.65 <= 0.05 && scrolled - 0.65 >= 0) list2p = (scrolled - 0.65) * 20;
+    if(scrolled - 0.65 > 0.05) list2p = 1;
+    listl.style.setProperty('--up', list2p)
+    listr.style.setProperty('--up', list2p)
+
+    if(scrolled - 0.75 <0 ) opb = 0;
+    if(scrolled - 0.75 <= 0.05 && scrolled - 0.75 >= 0) opb = (scrolled - 0.75) * 20;
+    if(scrolled - 0.75 > 0.05) opb = 1;
+    boxc.style.setProperty('--opacity', 1-opb)
 })
